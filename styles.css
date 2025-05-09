@@ -45,8 +45,6 @@ body {
 
   background-color: white;
   border-radius: 1rem;
-
-  overflow: hidden;
 }
 
 /* Card img */
@@ -58,6 +56,8 @@ body {
 .card__img img {
   width: 100%;
   height: 100%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 /* Card Main  */
@@ -155,6 +155,8 @@ body {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 
   top: -100%;
   left: 50%;
@@ -177,6 +179,23 @@ body {
   border-top: 10px solid var(--Very-Dark-Grayish-Blue); /* màu giống tooltip-box */
 }
 
+.author--twitter-icon:hover,
+.author--facebook-icon:hover,
+.author--pint-icon:hover {
+  animation: move 0.3s ease forwards;
+}
+
+@keyframes move {
+  from {
+    top: 0%;
+    transform: translateY(0%);
+  }
+  to {
+    top: 0%;
+    transform: translateY(-0.5rem);
+  }
+}
+
 /* Other */
 
 .inline {
@@ -187,6 +206,18 @@ body {
 
 .hidden {
   display: none;
+}
+
+.attribution {
+  font-size: 1.6rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media (max-width: 1440px) {
@@ -201,6 +232,7 @@ body {
   }
 
   .card__img img {
+    border-radius: 0;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
